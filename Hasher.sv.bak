@@ -1,0 +1,15 @@
+
+import definitions::*;
+module ALU(
+  input [3:0] operation,				  		// ALU operationcode, part of microcode
+  input       destination,		            //destination bit
+  input [7:0] input_a, input_b, input_immed, input_branch_addr, 
+					
+  output logic [7:0] out,		  // or:  output reg [7:0] out,
+  output logic [7:0] out_overflow,	  // shift out/carry out to register 13
+  output logic branch_decision
+  );
+	  
+  
+  
+endmodule
