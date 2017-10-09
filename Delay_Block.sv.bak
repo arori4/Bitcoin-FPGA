@@ -1,10 +1,10 @@
 /*
- * Delay_Block.sv
+ * delay_block.sv
  * Delays provided signals by 1 clock cycle.
  * Multiple can be chained at the top level for multiple cycles of delay.
  */
-import Definitions::*;
-module Delay_Block (input logic [7:0] round_in,
+import definitions::*;
+module delay_block (input logic [7:0] round_in,
 					input logic clk, reset_en, 
 					input c_memory_struct c_memory_in,
 					input c_hash_struct c_hash_in,

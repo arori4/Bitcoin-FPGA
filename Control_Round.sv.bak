@@ -1,9 +1,9 @@
 /*
- * Control_Block_end.sv
+ * control_block_end.sv
  * Controls what to do during the round
  */
-import Definitions::*;
-module Control_Round (input logic [7:0] round,
+import definitions::*;
+module control_round (input logic [7:0] round,
 					  input logic [1:0] opcode,
 					  input logic chunk_start,
 						  

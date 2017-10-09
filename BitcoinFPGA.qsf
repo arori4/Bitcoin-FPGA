@@ -44,26 +44,6 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:23:47  OCTOBER 06, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name SYSTEMVERILOG_FILE write_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE test.sv
-set_global_assignment -name SYSTEMVERILOG_FILE tb_final_shp.sv
-set_global_assignment -name SYSTEMVERILOG_FILE super_hash_processor.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sha256_new_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sha256_hash_function.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sha1_new_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sha1_hash_function.sv
-set_global_assignment -name SYSTEMVERILOG_FILE memory_k_chooser.sv
-set_global_assignment -name SYSTEMVERILOG_FILE memory_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE md5_hash_function.sv
-set_global_assignment -name SYSTEMVERILOG_FILE hash_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE delay_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE definitions.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_write_end.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_round.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_read_assign.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_hash_quad.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE calc_num_blocks.sv
 
 # Classic Timing Assignments
 # ==========================
@@ -109,3 +89,17 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 # end ENTITY(super_hash_processor)
 # --------------------------------
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Verify_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE SHA256_New_W.sv
+set_global_assignment -name SYSTEMVERILOG_FILE SHA256_Hash_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Memory_K_Chooser.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Memory_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Hash_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Delay_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Definitions.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Control_Verify.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Control_Round.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Control_Read_Assign.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Control_Hash_Quad.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Control_Block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BitcoinFPGA.sv

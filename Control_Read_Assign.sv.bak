@@ -1,6 +1,6 @@
 
-import Definitions::*;
-module Control_Read_Assign (input logic [31:0] size,
+import definitions::*;
+module control_read_assign (input logic [31:0] size,
 							input logic [15:0] num_blocks, wordread, mem_address,
 							input logic [7:0] chunk, round, md5_log_in, 
 							input logic [1:0] opcode,
@@ -25,7 +25,7 @@ always_comb begin
 		16'd2: begin
 			decision = 4'd1;
 		end
-		16'd1: begins
+		16'd1: begin
 			decision = 4'd2;
 		end
 		16'd0: begin

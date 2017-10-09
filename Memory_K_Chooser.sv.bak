@@ -1,10 +1,10 @@
 
 /*
- * Memory_K_Chooser.sv
+ * memory_k_chooser[.sv
  */
 
-import Definitions::*;
-module Memory_K_Chooser (input logic [7:0] round,
+import definitions::*;
+module memory_k_chooser (input logic [7:0] round,
 						 input logic [1:0] opcode, quad_funct,
 
 						 output logic [31:0] k_val );

@@ -1,0 +1,16 @@
+/*
+ * Verify_Block.sv
+ * Manages writes to memory
+ */
+import Definitions::*;
+module Verify_Block(input logic[31:0] hash[0:7],
+				   input logic[7:0] round,
+				   input logic clk,
+					
+				   output logic[31:0] mem_write_data);
+					
+always_ff @(posedge clk) begin
+	mem_write_data <= hash[round];
+end
+
+endmodule 

@@ -1,13 +1,13 @@
 /*
- * Memory_Block.sv
+ * memory_block.sv
  * Controlls the w array
  * 220.75 MHz
  * 545 ALUTS (93 here, 452 shanb1)
  * 544 registers (512 W, 32 next_w);
  */
 
-import Definitions::*;
-module Memory_Block(input logic [31:0] mem_read_data, size,
+import definitions::*;
+module memory_block(input logic [31:0] mem_read_data, size,
 					input logic [7:0] round,
 					input logic [1:0] opcode,
 					input logic clk, reset_en,
@@ -16,8 +16,16 @@ module Memory_Block(input logic [31:0] mem_read_data, size,
 					output logic [31:0] next_wk );
 
 logic [31:0] w[0:15], next_k, sha1_new, sha256_new;
+		
+sha1_new_block snb1(
+	.a(w[13]), //i - 16 = 16.
+	.b(w[8]), 
+	.c(w[2]), 
+	.d(w[0]),
+	
+	.out (sha1_new) );
 
-SHA256_New_W s256nb1( //ORDER IS IMPORTANT
+sha256_new_block s256nb1( //ORDER IS IMPORTANT
 	.a(w[1]), 
 	.b(w[14]), 
 	.c(w[0]), 
@@ -25,7 +33,7 @@ SHA256_New_W s256nb1( //ORDER IS IMPORTANT
 	
 	.out (sha256_new) );
 
-Memory_K_Chooser mkc1(
+memory_k_chooser mkc1(
 	.round (round),
 	.opcode (opcode),
 	.quad_funct (c_memory.md5_new_word),

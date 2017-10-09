@@ -1,9 +1,9 @@
 /*
- * control_block.sv
+ * Control_Block.sv
  * Very similar in functionality to both a PC and a control unit
  */
-import definitions::*;
-module control_block(input logic [31:0] message_addr, size, output_addr,
+import Definitions::*;
+module Control_Block(input logic [31:0] message_addr, size, output_addr,
 					 input logic [15:0] num_blocks,
 					 input logic [ 1:0] opcode,
 					 input logic clk, reset_en, start,
@@ -33,7 +33,7 @@ parameter byte unsigned load_vals[0:63] = '{
 	8'd8, 8'd15, 8'd6, 8'd13, 8'd4, 8'd11, 8'd2, 8'd9, 8'd63 };
 
 					
-control_read_assign cra1(
+Control_Read_Assign cra1(
 	.size (size), 
 	.num_blocks (num_blocks), 
 	.wordread (wordread), 
@@ -46,14 +46,14 @@ control_read_assign cra1(
 	.decision (cra_decision)
 );
 
-control_hash_quad chq1(
+Control_Hash_Quad chq1(
 	.round (round),
 	.opcode (opcode),
 	
 	.decision (chq_decision)
 );
 	
-control_round cr1(
+Control_Round cr1(
 	.round (round),
 	.opcode (opcode),
 	.chunk_start (chunk_start),
@@ -61,7 +61,7 @@ control_round cr1(
 	.decision (cr_decision)
 );
 
-control_write_end cwe1(
+Control_Verify cwe1(
 	.round (round),
 	.opcode (opcode),
 	
