@@ -1,0 +1,7 @@
+
+State Machine - |super_hash_processor|hash_control:hc1|state
+Name state.WRITE state.COMPUTE state.BEGIN state.IDLE 
+state.IDLE 0 0 0 0 
+state.BEGIN 0 0 1 1 
+state.COMPUTE 0 1 0 1 
+state.WRITE 1 0 0 1 

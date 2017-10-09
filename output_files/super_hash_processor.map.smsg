@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at memory_block.sv(100): always construct contains both blocking and non-blocking assignments File: E:/OneDrive/School/UCSD/ECE 111/Lab 6/memory_block.sv Line: 100

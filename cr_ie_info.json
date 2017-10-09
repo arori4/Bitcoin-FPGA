@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus_fit",
+		"comment" : "none",
+		"error_message" : "failed copying logdb file",
+		"source_file" : "/quartus/db/logdb/logdb_database.cpp",
+		"line" : "1402",
+		"stack_trace" : "\t0x7ffb659e4424: db_logdb + 0x4424 (?copy_database_file@LOGDB_DATABASE@@SAXPEBDW4LOGDB_DB_TYPE@@1@Z + 0xb4)\n\t0x7ffb5eb6338d: comp_qfit_legacy_flow + 0x338d (qfit_load_databases + 0x265)\n\t0x7ffb5eb6558a: comp_qfit_legacy_flow + 0x558a (QFIT_FRAMEWORK::initialize_databases + 0x26)\n\t0x7ffb5eb62613: comp_qfit_legacy_flow + 0x2613 (qfit_legacy_flow_run_legacy_fitter_flow + 0x15b)\n\t 0x64554410: tcl86 + 0x14410 (TclInvokeStringCommand + 0xf0)\n\t 0x645561e2: tcl86 + 0x161e2 (TclNRRunCallbacks + 0x62)\n\t 0x64557a65: tcl86 + 0x17a65 (TclEvalEx + 0xa65)\n\t 0x645e6f8b: tcl86 + 0xa6f8b (Tcl_FSEvalFileEx + 0x22b)\n\t 0x645e5646: tcl86 + 0xa5646 (Tcl_EvalFile + 0x36)\n\t0x7ffb92f62606: comp_qexe + 0x12606 (?qexe_evaluate_tcl_script@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x376)\n\t0x7ffb92f61864: comp_qexe + 0x11864 (qexe_do_tcl + 0x334)\n\t0x7ffb92f66755: comp_qexe + 0x16755 (?qexe_run_tcl_option@@YA_NPEAVQEXE_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x585)\n\t0x7ffb6e817e33: comp_qcu + 0x37e33 (?qcu_run_tcl_option@@YA_NPEAVQCU_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x1003)\n\t0x7ffb92f660aa: comp_qexe + 0x160aa (qexe_run + 0x39a)\n\t0x7ffb92f66e51: comp_qexe + 0x16e51 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xc1)\n\t0x7ff779892233: quartus_fit + 0x2233 (?qfit2_main@@YAHHPEAPEBD@Z + 0x73)\n\t0x7ffba7483328: CCL_MSG + 0x13328 (?msg_main_thread@@YAPEAXPEAX@Z + 0x18)\n\t0x7ffba7484b0e: CCL_MSG + 0x14b0e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7ffba7645b00: ccl_mem + 0x15b00 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7ffba7482a11: CCL_MSG + 0x12a11 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff77989287e: quartus_fit + 0x287e (__tmainCRTStartup + 0x10e)\n\t0x7ffbb32b2773: KERNEL32 + 0x12773 (BaseThreadInitThunk + 0x13)\n\t0x7ffbb4ef0d60: ntdll + 0x70d60 (RtlUserThreadStart + 0x20)\n",
+		"subsystem" : "LOGDB"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "16.1.0",
+		"build" : "196",
+		"edition" : "Lite Edition"
+	}
+}

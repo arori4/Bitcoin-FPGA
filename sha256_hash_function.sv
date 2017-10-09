@@ -34,8 +34,8 @@ always_comb begin
 
 	unique case (round_type)
 		PRECOMPUTE: begin
-			inter_out[0] = new_a;
-			inter_out[1] = new_a;
+			inter_out[0] = a;
+			inter_out[1] = a;
 			inter_out[2] = b;
 			inter_out[3] = c;
 			inter_out[4] = d;
