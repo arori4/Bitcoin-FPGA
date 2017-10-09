@@ -20,6 +20,9 @@ logic [31:0] intermediate_vals[0:7],
 logic [31:0] temporary_vals[0:2]; //real registers
 logic [31:0] sha256_hash_result[0:7];
 logic [31:0] sha256_temp_result[0:2];
+logic [7:0] round;
+logic [1:0] decision;
+logic start;
 
 parameter int sha256_k[0:63] = '{
 	32'h428a2f98, 32'h71374491, 32'hb5c0fbcf, 32'he9b5dba5, 32'h3956c25b, 32'h59f111f1, 32'h923f82a4, 32'hab1c5ed5,
@@ -46,7 +49,7 @@ sha256_hash_function s256hf1(
 	.t1_in (temporary_vals[1]),
 	.t2_in (temporary_vals[2]),
 	.round (round),
-	.round_type (c_hash.round_type),
+	.round_type (decision),
 						  
 	.inter_out (sha256_hash_result),
 	.temp_out (sha256_temp_result)
@@ -55,9 +58,32 @@ sha256_hash_function s256hf1(
 	  
 always_ff(@posedge clk) begin
 	
+	// start values
+	if (start) begin
+		hash[0] <= 32'h67452301;
+		hash[1] <= 32'hefcdab89;
+		hash[2] <= 32'h98badcfe;
+		hash[3] <= 32'h10325476;
+		hash[4] <= 32'hc3d2e1f0;
+		hash[5] <= 32'h9b05688c;
+		hash[6] <= 32'h1f83d9ab;
+		hash[7] <= 32'h5be0cd19;
+		intermediate_vals[0] <= 32'h67452301;
+		intermediate_vals[1] <= 32'hefcdab89;
+		intermediate_vals[2] <= 32'h98badcfe;
+		intermediate_vals[3] <= 32'h10325476;
+		intermediate_vals[4] <= 32'hc3d2e1f0;
+		intermediate_vals[5] <= 32'h9b05688c;
+		intermediate_vals[6] <= 32'h1f83d9ab;
+		intermediate_vals[7] <= 32'h5be0cd19;
+		temporary_vals[0] <= 32'd0;
+		temporary_vals[1] <= 32'd0;
+		temporary_vals[2] <= 32'h6a09e667; //must be 'a'
+	end
 	
+
 	
-	//end
+	// end
 	nonce = nonce + 255'b1;
 	intermediate_vals <= sha256_hash_result;
 	temporary_vals <= sha256_temp_result;
